@@ -124,6 +124,7 @@ extension GameScene: SKPhysicsContactDelegate {
             if let ball = contact.bodyA.node?.name == "Ball" ? contact.bodyA.node as? SKSpriteNode : contact.bodyB.node as? SKSpriteNode {
                 // Check if Player has selected the right Colour
                 if currentColourIndex == switchState.rawValue {
+                    run(SKAction.playSoundFileNamed("bling" , waitForCompletion: false))
                     //print("Correct!")
                     score += 1
                     updateScoreLabel()
